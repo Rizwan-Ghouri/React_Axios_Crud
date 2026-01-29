@@ -1,0 +1,135 @@
+body {
+  background-color: #17202a;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "urbanist";
+}
+
+p,
+a,
+li,
+input {
+  font-size: 1.6rem;
+  color: #dcdcdc;
+  letter-spacing: 0.12rem;
+  line-height: 1.5rem;
+}
+
+button {
+  padding: 0.8rem 3.2rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border: 0;
+  background-color: hsl(160, 80%, 48%);
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 8px;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+  margin-left: 1.2rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+
+button:hover {
+  background-color: hsl(160, 87%, 21%);
+  color: #dcdcdc;
+  box-shadow: rgb(9, 172, 115) 0px 7px 19px 0px;
+}
+
+/* main */
+.main-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-from {
+  padding: 1.6rem;
+  background-color: #1c2833;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+  margin: 3.2rem auto;
+  form {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  & input {
+    width: 24rem;
+    color: #17202a;
+    border: 0.1rem solid #566573;
+    outline: none;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+.sectiom-post {
+  width: 90%;
+
+  & ol {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2rem;
+
+    & li {
+      background-color: #0b34636e;
+      padding: 1.6rem;
+      border-radius: 0.3rem;
+      -webkit-border-radius: 0.3rem;
+      -moz-border-radius: 0.3rem;
+      -ms-border-radius: 0.3rem;
+      -o-border-radius: 0.3rem;
+      list-style-position: inside;
+      border-left: 0.2rem solid hsl(160, 80%, 48%);
+    }
+
+    & .btn-delete {
+      background-color: hsl(0, 80%, 48%);
+
+      &:hover {
+        color: #dcdcdc;
+        background-color: hsl(0, 87%, 21%);
+        box-shadow: rgb(172, 33, 9) 0px 7px 19px 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .section-from form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-post ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 720px) {
+  .sectiom-post ol {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff9811;
+}

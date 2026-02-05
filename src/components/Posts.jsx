@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { deletePost, getPosts } from "../api/PostApi";
 import "../App.css";
 import From from "./From";
+import Pagination from "./Pagination";
 
 const Posts = () => {
   const [data, setData] = useState([]);
@@ -37,6 +38,12 @@ const Posts = () => {
   const hendleUpdatePost = (post) => {
     setUpdateDataApi(post);
   }
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(10);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
     <>
@@ -45,7 +52,7 @@ const Posts = () => {
     </section>
       <section className="sectiom-post">
         <ol>
-          {data.map((alldata) => {
+          {currentPosts.map((alldata) => {
             const { id, title, body } = alldata;
             return (
               <li key={id}>
@@ -66,6 +73,7 @@ const Posts = () => {
             );
           })}
         </ol>
+        <Pagination totalPost={data.length} postsPerPage={postsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </section>
     </>
   );
